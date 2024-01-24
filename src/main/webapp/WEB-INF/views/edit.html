@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Edit</h1>
+<div th:each="o : ${errorList}">
+    <p style="color: red" th:text="${o.getDefaultMessage()}"></p>
+</div>
+<form action="/books/edit/{id}" method="post">
+    <input type="hidden" name="id" th:value="${book.id}">
+    <input type="text" name="name" th:value="${book.name}">
+    <input type="number" name="price" th:value="${book.price}">
+    <button>Save</button>
+</form>
+</body>
+</html>
